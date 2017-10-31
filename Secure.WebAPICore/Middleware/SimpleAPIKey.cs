@@ -15,8 +15,6 @@ namespace Secure.WebAPICore.Middleware
     public class SimpleAPIKeyMiddleware
     {
         private readonly RequestDelegate _next;
-
-
         public SimpleAPIKeyMiddleware(RequestDelegate next)
         {
             _next = next;
@@ -27,11 +25,8 @@ namespace Secure.WebAPICore.Middleware
 
             IHeaderDictionary headersDictionary = context.Request.Headers;
             // GetTypedHeaders extension method provides strongly typed access to many headers
-
-
             // For known header, knownheaderValues has 1 item and knownheaderValue is the value
-            //Obtain strongly typed header class in ASP.NET Core
-
+            // Obtain strongly typed header class in ASP.NET Core using AuthenticationHeaderValue.Parse
             var authenticationHeaderValue = AuthenticationHeaderValue.Parse(headersDictionary[HeaderNames.Authorization]);
             if (!(authenticationHeaderValue.Scheme == APIKeyValues.ApplicationKeyAuthenticationScheme && APIKeyValues.ApplicationKeyValue == new Guid(authenticationHeaderValue.Parameter)))
             {
@@ -40,7 +35,7 @@ namespace Secure.WebAPICore.Middleware
                 return;
             }
             // Call the next delegate/middleware in the pipeline
-            await  _next.Invoke(context);
+            await _next.Invoke(context);
         }
     }
 

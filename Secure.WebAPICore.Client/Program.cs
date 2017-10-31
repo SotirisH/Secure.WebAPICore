@@ -23,6 +23,7 @@ namespace Secure.WebAPICore.Client
             Console.WriteLine("2:Call Web API Secure");
             Console.WriteLine("3:Try simple app-key(success)");
             Console.WriteLine("4:Try simple app-key(fail)");
+            Console.WriteLine("5:PreShared Key-Secure");
             Console.WriteLine("------------------------------");
             Console.Write("Your Choise:");
             var ans = Console.ReadKey();
