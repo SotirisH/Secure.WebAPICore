@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Secure.WebAPICore", "Secure.WebAPICore\Secure.WebAPICore.csproj", "{51454658-4BF4-4CE8-AB61-A3018EFE8C89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Secure.WebAPICore", "Secure.WebAPICore\Secure.WebAPICore.csproj", "{51454658-4BF4-4CE8-AB61-A3018EFE8C89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Secure.WebAPICore.Client", "Secure.WebAPICore.Client\Secure.WebAPICore.Client.csproj", "{C4698AF5-6BF0-47B9-B818-72BB2F769D2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Secure.WebAPICore.Client", "Secure.WebAPICore.Client\Secure.WebAPICore.Client.csproj", "{C4698AF5-6BF0-47B9-B818-72BB2F769D2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Secure.WebAPICore.Common", "Secure.WebAPICore.Common\Secure.WebAPICore.Common.csproj", "{EA068CF8-9C16-44D2-A509-E578A83DC0C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Secure.WebAPICore.Common", "Secure.WebAPICore.Common\Secure.WebAPICore.Common.csproj", "{EA068CF8-9C16-44D2-A509-E578A83DC0C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Secure.WebAPICore.Tests", "Secure.WebAPICore.Tests\Secure.WebAPICore.Tests.csproj", "{EF14CAEF-4B89-42F1-A811-F2492ABE1468}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{EA068CF8-9C16-44D2-A509-E578A83DC0C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA068CF8-9C16-44D2-A509-E578A83DC0C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA068CF8-9C16-44D2-A509-E578A83DC0C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF14CAEF-4B89-42F1-A811-F2492ABE1468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF14CAEF-4B89-42F1-A811-F2492ABE1468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF14CAEF-4B89-42F1-A811-F2492ABE1468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF14CAEF-4B89-42F1-A811-F2492ABE1468}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

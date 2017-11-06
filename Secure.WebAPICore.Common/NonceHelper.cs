@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
 namespace Secure.WebAPICore.Common
 {
     /// <summary>
-    /// Nonce generator
+    /// Nonce generator using MD5 hash
     /// </summary>
-    public static class  NonceHelper
+    public static class NonceHelper
     {
-        private static ConcurrentDictionary<string, Tuple<int, DateTime>>
-            nonces = new ConcurrentDictionary<string, Tuple<int, DateTime>>();
         /// <summary>
         /// Generates a nonce according to Digest specs (MD5)
         /// </summary>
@@ -25,7 +20,7 @@ namespace Secure.WebAPICore.Common
             {
                 rngProvider.GetBytes(bytes);
             }            string nonce = bytes.ToMD5Hash();
-            nonces.TryAdd(nonce, new Tuple<int, DateTime>(0, DateTime.Now.AddMinutes(10)));            return nonce;
+            return nonce;
         }
         /// <summary>
         /// HashHelper        /// </summary>
@@ -37,7 +32,7 @@ namespace Secure.WebAPICore.Common
             MD5 md5 = MD5.Create();
             md5.ComputeHash(bytes)
             .ToList()
-            .ForEach(b => hash.AppendFormat("{0:x2}", b));
+            .ForEach(b => hash.AppendFormat("{0:x2}", b)); // it is important to convert the byte array to a hex string before return it
             return hash.ToString();
         }
         public static string ToMD5Hash(this string inputString)
